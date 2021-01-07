@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block meta_description%}Example.com - accommodation and travel promotions.{% endblock %}
+
+{% block title %}Example.com | Current Promotions{% endblock %}
+
+{% block body_id %}promotions{% endblock %}
+
+{% block page_title %}Save with our exclusive range of specials:{% endblock %}
+
+{% block content %}
+
+    {% for promotion in promotions %}
+
+        <article class="promotions">
+
+            {% with promotion.images.all|first as image %}
+
+                <a href="{% url promotion promotion.slug %}">
+
+                    <div class="image">
+
+                        <h2>{{ promotion.title }}</h2>
+                        <img src="{{ image.image.url }}" width="440" height="200" title="{{ image.title }}" alt="{{ image.alt }}">
+                        <p class="caption">{{ image.caption }}</p>
+
+                    </div>
+
+                </a>
+
+            {% endwith %}
+
+            <div class="description">
+
+                {{ promotion.text|safe|truncatewords_html:26 }}
+
+            </div>
+
+        </article>
+
+    {% endfor %}
+
+{% endblock %}

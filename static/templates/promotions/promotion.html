@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block meta_description%}{{ promotion.title }}{% endblock %}
+
+{% block title %}Example.com | Promotion: {{ promotion.title }}{% endblock %}
+
+{% block body_id %}promotion{% endblock %}
+
+{% block page_title %}{{ promotion.title }}{% endblock %}
+
+{% block page_sub_title %}{% if promotion.sub_title %}{{ promotion.sub_title }}{% endif %}{% endblock %}
+
+{% block page_extra_title %}
+    <span id="offer-time" class="bullet">Offer Valid From <span id="commence-date">{{ promotion.valid_from|date:"d N Y" }}</span> to <span id="expiery-date">{{ promotion.expire_on|date:"d N Y" }}</span></span>
+    {% if promotion.persons %}<span id="offer-persons" class="bullet"><span id="number-persons">{{ promotion.persons }}</span> People</span>{% endif %}
+    {% if promotion.nights %}<span id="offer-nights" class="bullet"><span id="number-nights">{{ promotion.nights }}</span> Nights</span>{% endif %}
+    {% if promotion.price %}<span id="offer-price" class="bullet"><span id="number-price">R{{ promotion.price }}</span></span>{% endif %}
+{% endblock %}
+
+{% block content %}
+
+        <article class="promotion c">
+
+            <div class="image">
+
+                {% for image in promotion.images.all %}
+
+                    <img src="{{ image.image.url }}" width="440" height="200" title="{{ image.title }}" alt="{{ image.alt }}">
+                    <p class="caption">{{ image.caption }}</p>
+
+                {% endfor %}
+
+            </div>
+
+            <div class="description">
+
+                {{ promotion.text|safe }}
+
+            </div>
+
+        </article>
+
+        <a href="{% url contact %}" class="gradient">Book Now</a>
+
+{% endblock %}

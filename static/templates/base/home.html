@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Example.com | Home{% endblock %}
+
+{% block body_id %}home{% endblock %}
+
+{% block content %}
+
+
+<div id="categories" class="c">
+
+    <div class="category">
+
+        <h1>Accommodation</h1>
+
+        <img src="{{ STATIC_URL }}images/base/home/accommodation.jpg">
+
+        <a href="{% url accommodation %}" class="gradient">Book Now</a>
+
+    </div>
+
+    <div class="category">
+
+        <h1>Flights</h1>
+
+        <img src="{{ STATIC_URL }}images/base/home/flights.jpg">
+
+        <a href="{% url flights %}" class="gradient">Book Now</a>
+
+    </div>
+
+
+    <div class="category">
+
+        <h1>Car Hire</h1>
+
+        <img src="{{ STATIC_URL }}images/base/home/car_hire.jpg">
+
+        <a href="{% url car_hire %}" class="gradient">Book Now</a>
+
+    </div>
+
+    <div class="category">
+
+        <h1>Restaurants</h1>
+
+        <img src="{{ STATIC_URL }}images/base/home/restaurants.jpg">
+
+        <a href="{% url restaurants %}" class="gradient">Book Now</a>
+
+    </div>
+
+</div>
+
+<img src="{{ STATIC_URL }}images/base/home/banner.png" width=900 height=100 alt="Silhouettes of African wildlife">
+
+{% endblock %}

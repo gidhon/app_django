@@ -1,0 +1,158 @@
+[
+    {
+        "pk": 2,
+        "model": "promotions.promotion",
+        "fields": {
+            "nights": null,
+            "title": "African Dreams",
+            "text": "<p>Arabica carajillo qui foam dark saucer carajillo. Filter, medium that acerbic black sugar aroma espresso crema.</p>",
+            "price": null,
+            "created": "2013-02-08T21:43:40.902Z",
+            "sub_title": "15% discount for all bookings made through Example.com!",
+            "persons": null,
+            "valid_from": "2013-02-09",
+            "active": true,
+            "expire_on": "2013-02-28",
+            "slug": "african-dreams"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "promotions.promotion",
+        "fields": {
+            "nights": null,
+            "title": "Leopard Mountain Lodge Valentine's Special",
+            "text": "<p>Instant lungo, id cinnamon skinny french press variety.</p>",
+            "price": "1195.00",
+            "created": "2013-02-08T21:16:16.407Z",
+            "sub_title": "Last minute specials! Book accommodation from 7 \u2013 14 Feb at R1195 per person per night sharing.",
+            "persons": null,
+            "valid_from": "2013-02-07",
+            "active": true,
+            "expire_on": "2013-02-14",
+            "slug": "leopard-mountain-lodge-valentines-special"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "promotions.promotion",
+        "fields": {
+            "nights": 4,
+            "title": "Green Gables Guest House Valentine's Special",
+            "text": "<p>Brewed percolator pumpkin spice single shot strong, sweet mazagran et sit crema.</p>",
+            "price": "456.95",
+            "created": "2013-02-08T22:36:25.134Z",
+            "sub_title": "Valentines Special 14, 15, 16 Feb instead of R800 a double you can get it for R600 per double per day.",
+            "persons": 3,
+            "valid_from": "2013-02-08",
+            "active": true,
+            "expire_on": "2013-02-16",
+            "slug": "green-gables-guest-house-valentines-special"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "promotions.promotion",
+        "fields": {
+            "nights": null,
+            "title": "Lions Valley Lodge",
+            "text": "<p>Half and half viennese as trifecta extraction caffeine kopi-luwak.</p>",
+            "price": "1950.00",
+            "created": "2013-02-08T22:39:18.825Z",
+            "sub_title": "Special offer of only R1950 per person sharing per night. Includes: 2 game drives, 3 meals per day. Teas, coffees and still bottled waters all day.",
+            "persons": null,
+            "valid_from": "2013-02-01",
+            "active": true,
+            "expire_on": "2013-06-30",
+            "slug": "lions-valley-lodge"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "promotions.image",
+        "fields": {
+            "caption": "Beauty and splendor for all!",
+            "image": "promotions/images/leopardmountain1.jpg",
+            "promotion": 1,
+            "alt": "",
+            "title": ""
+        }
+    },
+    {
+        "pk": 2,
+        "model": "promotions.image",
+        "fields": {
+            "caption": "Beauty and splendor for all!",
+            "image": "promotions/images/leopardmountain2.jpg",
+            "promotion": 1,
+            "alt": "",
+            "title": ""
+        }
+    },
+    {
+        "pk": 3,
+        "model": "promotions.image",
+        "fields": {
+            "caption": "African Dreams",
+            "image": "promotions/images/africandreams1.jpg",
+            "promotion": 2,
+            "alt": "",
+            "title": ""
+        }
+    },
+    {
+        "pk": 4,
+        "model": "promotions.image",
+        "fields": {
+            "caption": "African Dreams",
+            "image": "promotions/images/africandreams2.jpg",
+            "promotion": 2,
+            "alt": "",
+            "title": ""
+        }
+    },
+    {
+        "pk": 5,
+        "model": "promotions.image",
+        "fields": {
+            "caption": "Green Gables",
+            "image": "promotions/images/greengables1.jpg",
+            "promotion": 3,
+            "alt": "",
+            "title": ""
+        }
+    },
+    {
+        "pk": 6,
+        "model": "promotions.image",
+        "fields": {
+            "caption": "Green Gables",
+            "image": "promotions/images/greengables2.jpg",
+            "promotion": 3,
+            "alt": "",
+            "title": ""
+        }
+    },
+    {
+        "pk": 7,
+        "model": "promotions.image",
+        "fields": {
+            "caption": "Lions Valley",
+            "image": "promotions/images/lionsvalley1.jpg",
+            "promotion": 4,
+            "alt": "",
+            "title": ""
+        }
+    },
+    {
+        "pk": 8,
+        "model": "promotions.image",
+        "fields": {
+            "caption": "Lions Valley",
+            "image": "promotions/images/lionsvalley2.jpg",
+            "promotion": 4,
+            "alt": "",
+            "title": ""
+        }
+    }
+]

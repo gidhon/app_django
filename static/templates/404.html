@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Example.com | Page not found (404){% endblock %}
+
+{% block body_id %}404{% endblock %}
+
+{% block page_head %}Page not found (404){% endblock %}
+
+{% block content %}
+
+    <p>We can not find the page you requested: <strong>{{ request_path }}</strong></p>
+
+    <p>You may also double check the URL which brought you here, it might be incorrect or outdated.</p>
+
+{% endblock %}

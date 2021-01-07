@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en-za">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="description" content="{% block meta_description %}Reservations made simple.{% endblock %}">
+        <meta name="keywords" content="accommodation, reservation, travel">
+        <meta name="msvalidate.01" content="M0AC124F32A89DE45C92C850F4A5" />
+
+        <title>{% block title %}Example.com{% endblock %}</title>
+
+        <link href="{{ STATIC_URL }}style/base.css?v=23" rel="stylesheet">
+        <link href="{{ STATIC_URL }}images/base/global/favicon.png?v=1" type="image/png" rel="icon">
+        <link href='http://fonts.googleapis.com/css?family=Ubuntu:400italic,700italic|Rosario:700italic' rel='stylesheet' type='text/css'>
+
+        <!--[if lt IE 9]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/mootools/1.4.5/mootools-yui-compressed.js"></script>
+            <script type="text/javascript" src="{{ STATIC_URL }}scripts/selectivizr-min.js"></script>
+            <noscript><link href="{{ STATIC_URL }}style/base.css?v=0.23" rel="stylesheet"/></noscript>
+        <![endif]-->
+
+        <!--[if gte IE 9]>
+            <style type="text/css">
+                .gradient {
+                    filter:none !important;
+                }
+            </style>
+        <![endif]-->
+
+        <script type="text/javascript">
+
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-27591276-3']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+        </script>
+
+    </head>
+
+    <body id="{% block body_id %}{% endblock %}">
+
+        <nav id="main-nav">
+
+            <ul>
+
+                <li><a id="home-anchor" href="{% url home %}">Home</a></li>
+                <li><a id="accommodation-anchor" href="{% url accommodation %}">Accommodation</a></li>
+                <li><a id="flights-anchor" href="{% url flights %}">Flights</a></li>
+                <li><a id="car-hire-anchor" href="{% url car_hire %}">Car Hire</a></li>
+                <li><a id="restaurants-anchor" href="{% url restaurants %}">Restaurants</a></li>
+                <li><a id="promotions-anchor" href="{% url promotions %}">Promotions</a></li>
+                <li><a id="contact-anchor" href="{% url contact %}">Contact Us</a></li>
+
+            </ul>
+
+        </nav>
+
+        <div id="network">
+
+            <a class="facebook" href="http://www.facebook.com/pages/" target="_blank"></a>
+            <a class="twitter" href="https://twitter.com/" target="_blank"></a>
+
+        </div>
+
+        <header id="site-head">
+
+            <hgroup>
+
+                <a href="{% url home %}" style="color:black; text-decoration:none;"><h1>Booking<span>ZA</span>.com</h1></a>
+                <h2>Reservations, simplified.</h2>
+
+            </hgroup>
+
+            <div id="composite">
+                <img src="{{ STATIC_URL }}images/base/global/composite.png" alt="Accommodation, Flights, Rental cars, Restaurants" title="Accommodation, flights, car rental and restaurant bookings." width="468" height="60">
+            </div>
+
+            <div id="head-ad-2">
+                <a href="{% url promotions %}">
+                    <h3>Awesome deals!</h3>
+                    <p>Check out the latest...</p>
+                </a>
+            </div>
+
+        </header>
+
+        <header id="page-title">
+
+            <hgroup>
+
+                <h1>{% block page_title %}{% endblock %}</h1>
+                <h2>{% block page_sub_title %}{% endblock %}</h2>
+                <h3>{% block page_extra_title %}{% endblock %}</h3>
+
+            </hgroup>
+
+        </header>
+
+        <div id="content">
+
+            {% block content %}{% endblock %}
+
+        </div>
+
+        <footer>
+
+            <p>&copy; 2013 Example.com | <a href="/contact/">Contact</a> | <a href="/privacy/">Privacy</a> | <a href="/tos/">Terms</a> | <a href="http://cygnul.com/" title="Developed by Cygnul" target="_blank">Cygnul</a> | <a href="/admin/">Login</a></p>
+
+        </footer>
+
+    </body>
+
+</html>

@@ -1,0 +1,253 @@
+<html>
+
+    <head>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <title>{{ first_name }} {{ last_name }} - {{ subject }}</title>
+
+        <style type="text/css">
+
+            /*** reset ***/
+
+            article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+                display:block;
+            }
+
+            /* prevent Webkit and Windows Mobile from changing default font sizes, while not breaking desktop design. */
+            body {
+                font-family:Helvetica, Arial, Ubuntu, sans-serif;
+                margin:0;
+                padding:0;
+                width:100% !important;
+                -webkit-text-size-adjust:100%;
+                -ms-text-size-adjust:100%;
+                background:#eeeeee;
+            }
+
+            a {
+                outline:none;
+            }
+
+            /* force Hotmail to display emails at full width */
+            .ExternalClass {width:100%;}
+
+            /* Force Hotmail to display normal line spacing. */
+            .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
+                line-height: 100%;
+            }
+
+            #backgroundTable {
+                margin:22px 0;
+                padding:0;
+                width:100% !important;
+                line-height:100% !important;
+            }
+
+            /*** end reset ***/
+
+            /*** image defaults: "-ms-interpolation-mode: bicubic" works to help ie properly resize images in IE. (if you are resizing them using the width and height attributes); "border:none" removes border when linking images. ***/
+
+            img {
+                display:block;
+                outline:none;
+                text-decoration:none;
+                -ms-interpolation-mode:bicubic;
+            }
+
+            a img {
+                border:none;
+            }
+
+            p {
+                margin:1em 0;
+            }
+
+            /*** Hotmail header color reset: Hotmail replaces your header color styles with a green color on H2, H3, H4, H5, and H6 tags. In this example, the color is reset to black for a non-linked header, blue for a linked header, red for an active header (limited support), and purple for a visited header (limited support).  Replace with your choice of color. The !important is really what is overriding Hotmail's styling. Hotmail also sets the H1 and H2 tags to the same size. ***/
+
+            h1, h2, h3, h4, h5, h6 {
+                color:#555555;
+                margin:0;
+            }
+
+            h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+                color:#3366BB; !important;
+            }
+
+            /* There is limited support for pseudo classes in email clients, this is added for good measure. */
+            h1 a:active, h2 a:active,  h3 a:active, h4 a:active, h5 a:active, h6 a:active {
+            color:#3366BB; !important;
+            }
+
+            /*** headings ***/
+
+            h1 {
+                font-size:2em;
+            }
+
+            /*** tables ***/
+
+            table {
+                margin:0;
+            }
+
+            table#main {
+                margin:0 auto;
+                border:1px solid #dddddd;
+            }
+
+            table#header {
+                margin-bottom:-32px;
+            }
+
+            table#meta td {
+                font-size:.8em;
+            }
+
+            table#meta td.key {
+                color:#666666;
+                font-weight:bold;
+            }
+
+            table#meta td.value {
+                color:#222222;
+                border:1px solid #dddddd;
+            }
+
+            table#text {
+                margin:-68px -20px;
+            }
+
+            table#text td {
+                line-height:150% !important;
+                color:#444444;
+            }
+
+            table#footer {
+                color:#999999;
+                border-top:1px solid #dddddd;
+            }
+
+            table#footer td {
+                font-size:.8em;
+            }
+
+            td {
+                font-size:.9em;
+                border-collapse:collapse;
+            }
+
+            /*** links ***/
+
+            a {
+                text-decoration:none;
+            }
+
+            a:link {
+                color:#3366BB;
+                background:none;
+            }
+
+            a:visited {
+                color:#0B0080;
+            }
+
+            a:hover {
+                text-decoration:underline;
+            }
+
+            a:active {
+                color:#3366BB;
+            }
+
+        </style>
+
+        <!-- Target Outlook 2007 and 2010 -->
+        <!--[if gte mso 9]>
+
+            <style>
+
+            </style>
+
+        <![endif]-->
+
+    </head>
+
+    <body>
+
+        <table id="backgroundTable" width="100%" cellspacing="0" cellpadding="0">
+
+            <table valign="middle" align="center" id="main" width="580" cellspacing="0" cellpadding="25" border="0" bgcolor="white">
+
+                <!-- header -->
+
+                <tr>
+                    <td>
+                        <table align="center" id="header" width="100%" cellspacing="0" cellpadding="0" border="0">
+                            <tr>
+                                <td width="100%" align="left" valign="middle">
+                                    <h1>Example.com</h1>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <!-- meta -->
+
+                <tr>
+                    <td>
+                        <table align="center" id="meta" width="92%" cellspacing="3" cellpadding="5" border="0">
+                            <tr>
+                                <td class="key" width="100" align="right" bgcolor="#eeeeee" valign="middle">Subject:</td>
+                                <td class="value"  align="left" valign="middle">{{ subject }}</td>
+                            </tr>
+                            <tr>
+                                <td class="key" width="100"  align="right" bgcolor="#eeeeee" valign="middle">From:</td>
+                                <td class="value"  align="left" valign="middle">{{ first_name }} {{ last_name }}</td>
+                            </tr>
+                            <tr>
+                                <td class="key" width="100"  align="right" bgcolor="#eeeeee" valign="middle">Email:</td>
+                                <td class="value" align="left" valign="middle"><a href="mailto:{{ sender }}">{{ sender }}</td>
+                            </tr>
+                            <tr>
+                                <td class="key" width="100"  align="right" bgcolor="#eeeeee" valign="middle">Phone:</td>
+                                <td class="value"  align="left" valign="middle">{{ phone }}</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <!-- text -->
+
+                <tr>
+                    <td>
+                        <table align="center" id="text" width="100%" cellspacing="0" cellpadding="25" border="0">
+                            <tr>
+                                <td>{{ message|linebreaks }}</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <!-- footer -->
+
+                <tr>
+                    <td>
+                        <table align="center" id="footer" width="100%" cellspacing="0" cellpadding="14" border="0">
+                            <tr>
+                                <td align="center">You received this message from <a style="color:#999999;" href="http://example.com/" target="_blank">Example.com</a></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+            </table>
+
+        </table>
+
+    </body>
+
+</html>

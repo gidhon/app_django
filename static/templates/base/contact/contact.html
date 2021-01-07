@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block title %}Example.com | Contact us{% endblock %}
+
+{% block body_id %}contact{% endblock %}
+
+{% block page_title %}Contact us{% endblock %}
+
+{% block page_sub_title %}Bookings, comments or queries - we'd love to hear from you!{% endblock %}
+
+{% block content %}
+
+        <div>
+
+            <form action="/contact/" method="post">{% csrf_token %}
+
+                <fieldset>
+
+                    <legend>Send us an e-mail</legend>
+
+
+                    <div id="form-fields"> {# form fields & submit button #}
+
+                        {{ form.non_field_errors }}
+
+                        <div>
+                            <label for="id_subject">Subject:</label>
+                            {{ form.subject }}
+                        </div>
+                        <div>
+                            <label for="id_first_name">First name:</label>
+                            {{ form.first_name }}
+                        </div>
+                        <div>
+                            <label for="id_last_name">Last name:</label>
+                            {{ form.last_name }}
+                        </div>
+                        <div>
+                            <label for="id_email">E-mail:</label>
+                            {{ form.email }}
+                        </div>
+                        <div>
+                            <label for="id_phone">Phone:</label>
+                            {{ form.phone }}
+                        </div>
+                        <div>
+                            <label for="id_message">Enter your message to Example.com below:</label>
+                            {{ form.message }}
+                        </div>
+                        <div>
+                            <label for="id_captcha">Enter the code shown in the image below:</label>
+                            <div>
+                                {{ form.captcha }}
+                            </div>
+                        </div>
+                        <div>
+                            {{ form.cc_self }}
+                            <label for="id_cc_self">Send me a <strong><em>copy</em></strong> of this message.</label>
+                        </div>
+
+                        <input type="submit" value="Send Message">
+
+                    </div>
+
+
+                    {% if form.errors %} {# display errors #}
+
+                        <div>
+
+                            <h3>Your message could not be sent:</h3>
+
+                            <ul>
+
+                                {% for key, value in form.errors.items %}
+
+                                    {% for error in value %}
+
+                                        <li>{{ error }}</li>
+
+                                    {% endfor %}
+
+                                {% endfor %}
+
+                            </ul>
+
+                        <div>
+
+                    {% endif %} {# end error display #}
+
+                </fieldset>
+
+            </form>
+
+        </div>
+
+{% endblock %}

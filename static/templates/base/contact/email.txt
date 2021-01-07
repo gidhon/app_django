@@ -1,0 +1,13 @@
+
+You received a message from Example.com:
+
+-------------------------------------------
+Subject: {{ subject }}
+From: {{ first_name }} {{ last_name }}
+Email: {{ sender }}
+Phone: {{ phone }}
+-------------------------------------------
+
+{{ message }}
+
+-----------------< END >-------------------
